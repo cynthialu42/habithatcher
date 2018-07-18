@@ -5,6 +5,8 @@ class Add extends Component {
     state = {
         name: "",
         iteration: 0,
+        count: 0,
+        complete: false,
         egg: 1
     }
     handleRandomEgg = () => {
@@ -27,6 +29,8 @@ class Add extends Component {
             API.saveHabit({
                 name: this.state.name,
                 iteration: this.state.iteration,
+                count: this.state.count,
+                complete: this.state.complete,
                 egg: this.state.egg
             })
             .then(this.props.history.push('/'))

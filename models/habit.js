@@ -14,6 +14,13 @@ const habitSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    count: {
+        type: Number
+    },
+    complete: {
+        type: Boolean,
+        default: false
+    },
     egg:{
         type: Number
     }
