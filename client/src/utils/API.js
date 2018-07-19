@@ -18,5 +18,8 @@ export default {
     }, 
     getEgg: function(id){
         return axios.get("/api/eggs/" + id);
+    },
+    updateCount: function(id, countData){
+        return axios.put("/api/habits/" + id, countData);
     }
 };

@@ -18,6 +18,26 @@ class Home extends Component {
            .catch(err => console.log(err));
     }
 
+    updateCount(id, currentCount){
+        // let testHabit = this.state.habits.filter(habit => habit._id === id);
+        // console.log(testHabit);
+        // let updatedCount = 1 + parseInt(testHabit[0].count);
+        // console.log("count: ", updatedCount);
+        // this.setState()
+        let updatedCount = parseInt(currentCount) + 1;
+        let countData = {
+            count: updatedCount
+        }
+        API.updateCount(id, countData)
+            .then(res => this.loadHabits())
+            .catch(err => console.log(err));
+
+        // API.getHabit(id)
+    }
+
+    handleChange(){
+
+    }
     render(){
         return(
             <div>HOME PAGE
@@ -36,6 +56,8 @@ class Home extends Component {
                             <img src = {habit.egg[0].end_img} width = '100' height = '100'/>
                         }
                         
+                        <button onClick = {() => this.updateCount(habit._id, habit.count)}>Update Count</button>
+                        <hr/>
                     </div>
                 ))}
             </div>

@@ -21,8 +21,10 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     update: function(req, res){
+        console.log("BODY BODY BODY BODY", req.body);
+        let test = 10;
         db.Habit
-            .findOneAndUpdate({ _id: req.params.id }, req.body)//{ $set: { name: 'jason bourne' }}
+            .findOneAndUpdate({ _id: req.params.id }, {$set: req.body})//{ $set: { name: 'jason bourne' }}
             .then(dbHabits => res.json(dbHabits))
             .catch(err => res.status(422).json(err));
     },
