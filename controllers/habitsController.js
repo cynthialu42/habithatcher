@@ -22,7 +22,7 @@ module.exports = {
     },
     update: function(req, res){
         db.Habit
-            .findOneAndUpdate({ _id: req.params.id }, req.body)
+            .findOneAndUpdate({ _id: req.params.id }, req.body)//{ $set: { name: 'jason bourne' }}
             .then(dbHabits => res.json(dbHabits))
             .catch(err => res.status(422).json(err));
     },
