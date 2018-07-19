@@ -7,7 +7,11 @@ class Add extends Component {
         iteration: 1,
         count: 0,
         complete: false,
-        egg: 0 //make an empty array later
+        egg: [] //make an empty array later
+    }
+
+    componentDidMount(){
+        this.handleRandomEgg();
     }
     handleRandomEgg = () => {
         // API call to /api/eggs/:id
@@ -15,6 +19,7 @@ class Add extends Component {
         // put this in componentDidMount so that
         //an egg is generated and stored in state as soon as we load the add page
         let randomEgg = Math.floor(Math.random() *3);
+        console.log(randomEgg);
         API.getEgg(randomEgg)
             .then(res =>
                 this.setState({
@@ -23,7 +28,7 @@ class Add extends Component {
             )
             .catch(err => console.log(err));
     }
-    
+
     handleInputChange = event => {
         // console.log(event);
         const { name, value } = event.target;
@@ -42,7 +47,7 @@ class Add extends Component {
                 complete: this.state.complete,
                 egg: this.state.egg
             })
-            .then(this.props.history.push('/'))
+            .then(console.log(this.props.history.push('/')))//this.props.history.push('/')
             .catch(err => console.log("ERROR HERE", err));
         
     }
