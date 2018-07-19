@@ -12,5 +12,11 @@ export default {
     },
     saveHabit: function(habitData){
         return axios.post("/api/habits", habitData);
+    },
+    getEggs: function(){
+        return axios.get("/api/eggs");
+    }, 
+    getEgg: function(id){
+        return axios.get("/api/eggs/" + id);
     }
 };

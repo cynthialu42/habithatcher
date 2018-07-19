@@ -4,17 +4,26 @@ import API from "../../utils/API";
 class Add extends Component {
     state = {
         name: "",
-        iteration: 0,
+        iteration: 1,
         count: 0,
         complete: false,
-        egg: 1
+        egg: 0 //make an empty array later
     }
     handleRandomEgg = () => {
         // API call to /api/eggs/:id
         //where id is randomly generated
         // put this in componentDidMount so that
         //an egg is generated and stored in state as soon as we load the add page
+        let randomEgg = Math.floor(Math.random() *3);
+        API.getEgg(randomEgg)
+            .then(res =>
+                this.setState({
+                    egg: res.data
+                })
+            )
+            .catch(err => console.log(err));
     }
+    
     handleInputChange = event => {
         // console.log(event);
         const { name, value } = event.target;
