@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-
+import Test from './../../components/test';
 
 
 class Home extends Component {
@@ -18,15 +18,21 @@ class Home extends Component {
            .catch(err => console.log(err));
     }
 
-    updateCount(id, currentCount){
+    updateCount(id, currentCount, iteration){
         // let testHabit = this.state.habits.filter(habit => habit._id === id);
         // console.log(testHabit);
         // let updatedCount = 1 + parseInt(testHabit[0].count);
         // console.log("count: ", updatedCount);
         // this.setState()
         let updatedCount = parseInt(currentCount) + 1;
+        let isComplete = false;
+        if (updatedCount === iteration){
+            console.log('Habit complete')
+            isComplete = true;
+        }
         let countData = {
-            count: updatedCount
+            count: updatedCount,
+            complete: isComplete
         }
         API.updateCount(id, countData)
             .then(res => this.loadHabits())
@@ -38,11 +44,22 @@ class Home extends Component {
     handleChange(){
 
     }
+    someAction(str, str2){
+        console.log(str, str2);
+    }
     render(){
         return(
             <div>HOME PAGE
+                
                 {this.state.habits.map(habit => (
                     <div>
+                        {/* <Test 
+                            updateCount = {this.updateCount}
+                            name = {habit.name}
+                            count = {habit.count}
+                            id = {habit._id}
+                            iteration = {habit.iteration}
+                        /> */}
                         <p>Name: {habit.name}</p>
                         <p>Count: {habit.count}</p>
                         <p>Iteration: {habit.iteration}</p>
@@ -54,9 +71,14 @@ class Home extends Component {
                             <img src = {habit.egg[0].start_img} width = '100' height = '100'/>
                             :
                             <img src = {habit.egg[0].end_img} width = '100' height = '100'/>
+                              
                         }
-                        
-                        <button onClick = {() => this.updateCount(habit._id, habit.count)}>Update Count</button>
+                        {habit.count === habit.iteration ? 
+                            <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration)}>Complete!</button>
+                            :
+                            <button onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration)}>+</button>
+
+                        }
                         <hr/>
                     </div>
                 ))}
