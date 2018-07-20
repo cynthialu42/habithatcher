@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
 import Test from './../../components/test';
-
-
+import moment from 'moment';
+import Instructions from './../../components/Instructions';
 class Home extends Component {
     state ={
         habits: []
@@ -41,29 +41,51 @@ class Home extends Component {
         // API.getHabit(id)
     }
 
-    handleChange(){
+  
 
-    }
-    someAction(str, str2){
-        console.log(str, str2);
-    }
     render(){
         return(
             <div>HOME PAGE
                 
-                {this.state.habits.map(habit => (
+                {/* <Instructions /> */}
+                {this.state.habits.length === 0 ?
+                    <Instructions/>
+                    :
+                    (
+                        <div>
+                        {this.state.habits.map(habit => (
+                            <div>
+                                <p>Name: {habit.name}</p>
+                                <p>Count: {habit.count}</p>
+                                <p>Iteration: {habit.iteration}</p>
+                                <p>Date: {moment(habit.date).format('ll')}</p>
+                                <p>Complete? {habit.complete}</p>
+                                <p>Egg name: {habit.egg[0].name}</p>
+                                <p>Egg hatch number: {habit.egg[0].hatching_number}</p>
+                                {habit.count < habit.egg[0].hatching_number ? 
+                                    <img src = {habit.egg[0].start_img} width = '100' height = '100'/>
+                                    :
+                                    <img src = {habit.egg[0].end_img} width = '100' height = '100'/>
+                                      
+                                }
+                                {habit.count === habit.iteration ? 
+                                    <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration)}>Complete!</button>
+                                    :
+                                    <button onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration)}>+</button>
+        
+                                }
+                                <hr/>
+                            </div>
+                        ))}
+                        </div>
+                    )
+                }
+                {/* {this.state.habits.map(habit => (
                     <div>
-                        {/* <Test 
-                            updateCount = {this.updateCount}
-                            name = {habit.name}
-                            count = {habit.count}
-                            id = {habit._id}
-                            iteration = {habit.iteration}
-                        /> */}
                         <p>Name: {habit.name}</p>
                         <p>Count: {habit.count}</p>
                         <p>Iteration: {habit.iteration}</p>
-                        <p>Date: {habit.date}</p>
+                        <p>Date: {moment(habit.date).format('ll')}</p>
                         <p>Complete? {habit.complete}</p>
                         <p>Egg name: {habit.egg[0].name}</p>
                         <p>Egg hatch number: {habit.egg[0].hatching_number}</p>
@@ -81,7 +103,7 @@ class Home extends Component {
                         }
                         <hr/>
                     </div>
-                ))}
+                ))} */}
             </div>
         )
     }
