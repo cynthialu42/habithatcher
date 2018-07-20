@@ -7,7 +7,7 @@ class Add extends Component {
         iteration: 1,
         count: 0,
         complete: false,
-        egg: [] //make an empty array later
+        egg: {} //make an empty array later
     }
 
     componentDidMount(){

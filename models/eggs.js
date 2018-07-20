@@ -6,8 +6,8 @@ const eggSchema = new Schema({
     name: { type: String },
     hatching_number: { type: Number },
     start_img: { type: String },
-    end_img: { type: String }
-    // is_hatched: { type: Boolean, default: false }
+    end_img: { type: String },
+    is_hatched: { type: Boolean, default: false }
 });
 
 const Egg = mongoose.model("Egg", eggSchema);

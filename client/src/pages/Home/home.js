@@ -26,14 +26,19 @@ class Home extends Component {
         // this.setState()
         let updatedCount = parseInt(currentCount) + 1;
         let isComplete = false;
+        let hatched = false;
         if (updatedCount === iteration){
             console.log('Habit complete')
             isComplete = true;
+            hatched = true;
         }
+        
         let countData = {
             count: updatedCount,
-            complete: isComplete
+            complete: isComplete,
+            'egg.is_hatched': hatched
         }
+        console.log(countData);
         API.updateCount(id, countData)
             .then(res => this.loadHabits())
             .catch(err => console.log(err));
@@ -45,7 +50,7 @@ class Home extends Component {
 
     render(){
         return(
-            <div>HOME PAGE
+            <div>
                 
                 {/* <Instructions /> */}
                 {this.state.habits.length === 0 ?
@@ -60,12 +65,12 @@ class Home extends Component {
                                 <p>Iteration: {habit.iteration}</p>
                                 <p>Date: {moment(habit.date).format('ll')}</p>
                                 <p>Complete? {habit.complete}</p>
-                                <p>Egg name: {habit.egg[0].name}</p>
-                                <p>Egg hatch number: {habit.egg[0].hatching_number}</p>
-                                {habit.count < habit.egg[0].hatching_number ? 
-                                    <img src = {habit.egg[0].start_img} width = '100' height = '100'/>
+                                <p>Egg name: {habit.egg.name}</p>
+                                <p>Egg hatch number: {habit.egg.hatching_number}</p>
+                                {habit.count < habit.egg.hatching_number ? 
+                                    <img src = {habit.egg.start_img} width = '100' height = '100'/>
                                     :
-                                    <img src = {habit.egg[0].end_img} width = '100' height = '100'/>
+                                    <img src = {habit.egg.end_img} width = '100' height = '100'/>
                                       
                                 }
                                 {habit.count === habit.iteration ? 

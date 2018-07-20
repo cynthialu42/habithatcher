@@ -21,7 +21,7 @@ const habitSchema = new Schema({
         type: Boolean,
         default: false
     },
-    egg:[]
+    egg:{}
 });
 
 const Habit = mongoose.model('Habit', habitSchema);
