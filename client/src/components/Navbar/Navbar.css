@@ -1,7 +1,14 @@
+
+
 .teal-background{
     background: #2FA599;
 }
 
 .white-text{
     color: white;
+
+}
+
+a .fas:hover{
+    transform: scale(1.2);
 }

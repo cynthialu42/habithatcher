@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import Test from './../../components/test';
 import moment from 'moment';
-import Instructions from './../../components/Instructions';
+import Instructions from './../../components/Instructions/index';
 class Home extends Component {
     state ={
         habits: []
@@ -18,7 +18,7 @@ class Home extends Component {
            .catch(err => console.log(err));
     }
 
-    updateCount(id, currentCount, iteration){
+    updateCount(id, currentCount, iteration, hatchingNumber){
         // let testHabit = this.state.habits.filter(habit => habit._id === id);
         // console.log(testHabit);
         // let updatedCount = 1 + parseInt(testHabit[0].count);
@@ -30,6 +30,9 @@ class Home extends Component {
         if (updatedCount === iteration){
             console.log('Habit complete')
             isComplete = true;
+        }
+        if(parseInt(hatchingNumber)-1 <= parseInt(currentCount)){
+            console.log('hatched')
             hatched = true;
         }
         
@@ -74,9 +77,9 @@ class Home extends Component {
                                       
                                 }
                                 {habit.count === habit.iteration ? 
-                                    <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration)}>Complete!</button>
+                                    <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
                                     :
-                                    <button onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration)}>+</button>
+                                    <button onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>+</button>
         
                                 }
                                 <hr/>

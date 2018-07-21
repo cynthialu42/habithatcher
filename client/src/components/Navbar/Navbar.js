@@ -5,15 +5,15 @@ const Navbar = (props) =>{
     // let background = {
     //     background:'#2FA599'
     // }
-    // let whiteText = {
-    //     color: 'white'
-    // }
+    let whiteText = {
+        color: 'white'
+    }
     return(
-        <nav className="navbar navbar-expand-lg navbar-light d-flex justify-content-between teal-background" >
-            <Link className = "navbar-brand white-text"  to = "/">Habit Hatcher</Link>
+        <nav className="navbar navbar-expand-sm navbar-light d-flex justify-content-between teal-background" >
+            <Link className = "navbar-brand white-text" style ={whiteText} to = "/">Habit Hatcher</Link>
             <div className="navbar-nav ml-auto">
-                <Link className="nav-link white-text" to="/add"><i class="fas fa-plus white-text"></i></Link>
-                <Link className="nav-link white-text" to="/add"><i class="fas fa-feather white-text"></i></Link>
+                <Link className="nav-link white-text" to="/add"><i className="fas fa-plus white-text fa-lg"></i></Link>
+                <Link className="nav-link white-text" to="/aviary"><i className="fas fa-crow white-text fa-lg"></i></Link>
             </div>
         </nav>
 

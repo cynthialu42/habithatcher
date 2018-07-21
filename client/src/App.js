@@ -6,6 +6,7 @@ import Add from './pages/Add';
 import NoMatch from './pages/NoMatch';
 import Navbar from './components/Navbar/index';
 import Container from './components/Container';
+import Aviary from './pages/Aviary';
 
 const App = () => (
   <Router>
@@ -16,6 +17,7 @@ const App = () => (
             <Route exact path = "/" component = {Home} />
             <Route exact path = "/habits/:id" component = {Edit} />
             <Route exact path = "/add" component = {Add} />
+            <Route exact path = "/aviary" component = {Aviary} />
             <Route component ={NoMatch} />
           </Switch>
         </Container>
