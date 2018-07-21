@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import Test from './../../components/test';
 import moment from 'moment';
 import Instructions from './../../components/Instructions/index';
+import './home.css';
 class Home extends Component {
     state ={
         habits: []
@@ -49,7 +50,9 @@ class Home extends Component {
         // API.getHabit(id)
     }
 
-  
+    handleDelete= id => {
+        API.deleteHabit(id).then(res => this.loadHabits());
+      };
 
     render(){
         return(
@@ -60,29 +63,64 @@ class Home extends Component {
                     <Instructions/>
                     :
                     (
-                        <div>
+                        <div className = 'row'>
                         {this.state.habits.map(habit => (
-                            <div>
-                                <p>Name: {habit.name}</p>
+                            <div className = 'col-lg-4 col-md-6 mt-5'>
+                                <div className = 'card text-white text-center no-border'>
+                                    {habit.count < habit.egg.hatching_number ? 
+                                        <img className = 'card-img bird-img' src = {habit.egg.start_img}/>
+                                        :
+                                        <img className = 'card-img bird-img' src = {habit.egg.end_img}/>
+                                        
+                                    }
+                                    <div className = 'card-img-overlay text-center test'>
+                                        <div className = 'row hi'>
+                                            <div className = 'col-12 delete-row'>
+                                                <a className = 'delete-btn' onClick={() => this.handleDelete(habit._id)}><i class="delete-btn fas fa-times fa-lg"></i></a>
+                                            </div>
+                                            <div className = 'col-12'>
+                                                <h5 className = 'card-title'>{habit.name}</h5>
+                                            </div>
+                                            <div className = 'col-12'>
+                                                <p>Push code to github twice a day</p>
+                                            </div>
+                                            <div className= 'col-12'>
+                                                {habit.count}/{habit.iteration}
+                                            </div>
+                                            <div className = 'col-12'>
+                                                {habit.count === habit.iteration ? 
+                                                    <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
+                                                    :
+                                                    <button onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>+</button>
+                                                }
+                                            </div>
+                                        
+                                       
+                                            <div className = 'col-12'>
+                                                <p className = 'text-muted bottom-text'>Created {moment(habit.date).fromNow('dd')} ago</p>
+                                            </div>
+                                        </div>
+                                        {/* <h5 className = 'card-title'>{habit.name}</h5>
+                                        {habit.count === habit.iteration ? 
+                                            <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
+                                            :
+                                            <button onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>+</button>
+
+                                        }
+                                        <button onClick={() => this.handleDelete(habit._id)} className="btn">Delete</button>
+                                        <p className = 'text-muted bottom-text'>Date: {moment(habit.date).fromNow('dd')}</p> */}
+                                    </div>
+                                {/* <p>Name: {habit.name}</p>
                                 <p>Count: {habit.count}</p>
                                 <p>Iteration: {habit.iteration}</p>
                                 <p>Date: {moment(habit.date).format('ll')}</p>
                                 <p>Complete? {habit.complete}</p>
                                 <p>Egg name: {habit.egg.name}</p>
-                                <p>Egg hatch number: {habit.egg.hatching_number}</p>
-                                {habit.count < habit.egg.hatching_number ? 
-                                    <img src = {habit.egg.start_img} width = '100' height = '100'/>
-                                    :
-                                    <img src = {habit.egg.end_img} width = '100' height = '100'/>
-                                      
-                                }
-                                {habit.count === habit.iteration ? 
-                                    <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
-                                    :
-                                    <button onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>+</button>
-        
-                                }
-                                <hr/>
+                                <p>Egg hatch number: {habit.egg.hatching_number}</p> */}
+                                
+                                
+
+                                </div>
                             </div>
                         ))}
                         </div>

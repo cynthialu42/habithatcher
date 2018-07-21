@@ -31,14 +31,14 @@ class Aviary extends Component {
                     {habit.egg.is_hatched === true ?
                     (
                         <div>
-                            <img src = {habit.egg.end_img} width = '100' height = '100'/>
+                            <img className = 'bird-img' src = {habit.egg.end_img}/>
                             <p>{habit.egg.name}</p>
                         </div>
                     )
                     :
                         <div>
-                            <img src = {habit.egg.start_img} width = '100' height = '100'/>
-                            <p>{habit.egg.name}</p>
+                            <img className = 'bird-img' src = {habit.egg.start_img}/>
+                            <p>???</p>
                         </div>
                     }
                     </div>

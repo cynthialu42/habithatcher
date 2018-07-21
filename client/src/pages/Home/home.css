@@ -1,0 +1,50 @@
+.bird-img{
+    width: 100%;
+    margin: auto;
+
+}
+
+.full-height{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bottom{
+    bottom: 0;
+}
+.delete-row{
+    display: flex;
+    right: 0;
+    flex-direction: row-reverse;
+    height: 2em;
+}
+.delete-btn{
+    color: red;
+    padding-right: .5em;
+}
+.delete-btn:hover{
+    color: green;
+}
+.no-border{
+    border: none;
+}
+.test{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+/* .hey{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+} */
+
+.hi{
+    position: absolute;
+    display: flex;
+    height: 100%;
+}
