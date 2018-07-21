@@ -1,0 +1,17 @@
+/* .habit-form{
+    padding-top: 3em;
+    margin: auto;
+} */
+
+.habit-btn{
+    width: 100%;
+    background: #1EBEA5;
+    color: white;
+
+}
+.habit-btn:hover{
+    background: #20736A;
+}
+.button-color{
+    background: #1EBEA5;
+}
