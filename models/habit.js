@@ -21,6 +21,9 @@ const habitSchema = new Schema({
         type: Boolean,
         default: false
     },
+    description:{
+        type: String
+    },
     egg:{}
 });
 

@@ -66,15 +66,27 @@ class Home extends Component {
                         <div className = 'row'>
                         {this.state.habits.map(habit => (
                             <div className = 'col-lg-4 col-md-6 mt-5'>
-                                <div className = 'card text-white text-center no-border'>
+                                <div className = 'card text-white no-border'>
                                     {habit.count < habit.egg.hatching_number ? 
                                         <img className = 'card-img bird-img' src = {habit.egg.start_img}/>
                                         :
                                         <img className = 'card-img bird-img' src = {habit.egg.end_img}/>
                                         
                                     }
-                                    <div className = 'card-img-overlay text-center test'>
-                                        <div className = 'row hi'>
+                                    <div className = 'card-img-overlay test text-right'>
+                                        <a className = 'delete-btn' onClick={() => this.handleDelete(habit._id)}><i class="delete-btn fas fa-times fa-lg"></i></a>
+                                        <div className = 'card-title text-center habit-name'>{habit.name}</div>
+                                        <div className = 'text-center habit-description'>{habit.description}</div>
+                                        <div className = 'text-center habit-counter'>{habit.count}/{habit.iteration}</div>
+                                        <div className = 'text-center'>
+                                            {habit.count === habit.iteration ? 
+                                                <button className = 'btn add-btn' disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
+                                                :
+                                                <button className = 'btn add-btn' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}><i class="fas fa-plus "></i></button>
+                                            }
+                                        </div>
+                                        <div className = 'text-muted bottom-text text-center'>Created {moment(habit.date).fromNow('dd')} ago</div>
+                                        {/* <div className = 'row hi'>
                                             <div className = 'col-12 delete-row'>
                                                 <a className = 'delete-btn' onClick={() => this.handleDelete(habit._id)}><i class="delete-btn fas fa-times fa-lg"></i></a>
                                             </div>
@@ -89,9 +101,9 @@ class Home extends Component {
                                             </div>
                                             <div className = 'col-12'>
                                                 {habit.count === habit.iteration ? 
-                                                    <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
+                                                    <button className = 'btn btn-primary' disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
                                                     :
-                                                    <button onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>+</button>
+                                                    <button className = 'btn btn-primary' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>+</button>
                                                 }
                                             </div>
                                         
@@ -99,7 +111,7 @@ class Home extends Component {
                                             <div className = 'col-12'>
                                                 <p className = 'text-muted bottom-text'>Created {moment(habit.date).fromNow('dd')} ago</p>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* <h5 className = 'card-title'>{habit.name}</h5>
                                         {habit.count === habit.iteration ? 
                                             <button disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>

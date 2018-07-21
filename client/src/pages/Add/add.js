@@ -8,6 +8,7 @@ class Add extends Component {
         iteration: 1,
         count: 0,
         complete: false,
+        description: '',
         egg: {} //make an empty array later
     }
 
@@ -46,6 +47,7 @@ class Add extends Component {
                 iteration: this.state.iteration,
                 count: this.state.count,
                 complete: this.state.complete,
+                description: this.state.description,
                 egg: this.state.egg
             })
             .then(console.log(this.props.history.push('/')))//this.props.history.push('/')
@@ -83,10 +85,21 @@ class Add extends Component {
                                 value = {this.state.iteration}
                                 onChange = {this.handleInputChange}
                                 name = "iteration"
-                                placeholder = "How many times a day should you do this?"
-                                id = 'habitIteration'
+                                id = 'habitDescription'
                                 className = 'form-control'
                             />
+                        </div>
+                        <div className = 'form-group'>
+                            <label htmlFor='habitDescription'>Notes:</label>
+                            <textarea
+                                value = {this.state.description}
+                                onChange = {this.handleInputChange}
+                                name = "description"
+                                id = 'habitDescription'
+                                className = 'form-control'
+                                maxLength="60"
+                            >
+                            </textarea>
                         </div>
                         <div className = 'form-group mt-3'>
                             <input

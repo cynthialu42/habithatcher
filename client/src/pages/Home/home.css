@@ -11,32 +11,46 @@
     flex-direction: column;
 }
 
-.bottom{
+.bottom-text{
+    position: absolute;
     bottom: 0;
+    margin: auto;
+    left: 10%;
+    font-size: 1em;
 }
-.delete-row{
+/* .delete-row{
     display: flex;
     right: 0;
     flex-direction: row-reverse;
     height: 2em;
-}
+} */
 .delete-btn{
-    color: red;
-    padding-right: .5em;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    color: #DB2F18;
 }
 .delete-btn:hover{
-    color: green;
+    color: #D30915;
 }
 .no-border{
     border: none;
 }
-.test{
+.add-btn:hover{
+    background: #20736A;
+}
+.add-btn{
+    background: #1EBEA5;
+    color: white;
+
+}
+/* .test{
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 100%;
     justify-content: center;
-}
+} */
 /* .hey{
     position: absolute;
     width: 100%;
@@ -47,4 +61,18 @@
     position: absolute;
     display: flex;
     height: 100%;
+}
+.habit-name{
+    font-size: 1.5rem;
+    margin-top: .5em;
+}
+
+.habit-description{
+    font-size: 1rem;
+    padding: .5em 1em;
+}
+
+.habit-counter{
+    font-size: 1.5rem;
+    padding-bottom: .5em;
 }
