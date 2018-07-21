@@ -15,8 +15,8 @@
     position: absolute;
     bottom: 0;
     margin: auto;
-    left: 10%;
-    font-size: 1em;
+    left: 5%;
+    font-size: .75em;
 }
 /* .delete-row{
     display: flex;
@@ -27,7 +27,7 @@
 .delete-btn{
     position: absolute;
     top: 5%;
-    right: 10%;
+    right: 5%;
     color: #DB2F18;
 }
 .delete-btn:hover{
@@ -40,9 +40,16 @@
     background: #20736A;
 }
 .add-btn{
+    position: absolute;
+    bottom: 15%;
+    margin: auto;
     background: #1EBEA5;
     color: white;
 
+}
+.btn-section{
+    display: flex;
+    justify-content: center;
 }
 /* .test{
     display: flex;
@@ -68,11 +75,21 @@
 }
 
 .habit-description{
-    font-size: 1rem;
+    font-size: .8rem;
     padding: .5em 1em;
 }
 
 .habit-counter{
     font-size: 1.5rem;
     padding-bottom: .5em;
+    bottom: 20%;
+    display: absolute;
+    background: pink;
+}
+.test{
+    background: #29b6f6
+
+
+
+    ;
 }
