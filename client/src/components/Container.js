@@ -3,7 +3,7 @@ import { PromiseProvider } from 'mongoose';
 
 const Container = props =>{
     return(
-        <div className = 'container'>
+        <div className = 'container-fluid'>
             {props.children}
         </div>
     )

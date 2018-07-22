@@ -20,7 +20,7 @@ class Add extends Component {
         //where id is randomly generated
         // put this in componentDidMount so that
         //an egg is generated and stored in state as soon as we load the add page
-        let randomEgg = Math.floor(Math.random() *3);
+        let randomEgg = Math.floor(Math.random() * 5);
         console.log(randomEgg);
         API.getEgg(randomEgg)
             .then(res =>
