@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import API from './../../utils/API';
 import './Aviary.css';
 import Modal from './../../components/Modal';
+import ProgressBar from './../../components/ProgressBar';
 
 class Aviary extends Component {
     state = {
@@ -24,7 +25,7 @@ class Aviary extends Component {
 
     render(){
         return(
-            <div className = 'center-birds mt-5'>
+            <div className = 'container center-birds mt-5'>
                 <h1>The Aviary</h1>
                 {/* <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -60,6 +61,7 @@ class Aviary extends Component {
                                 habit_name = {habit.name}
                                 habit_description = {habit.description}
                             />
+
                         </div>
                     )
                     :
@@ -72,6 +74,10 @@ class Aviary extends Component {
                                 habit_id = {habit._id}
                                 habit_name = {habit.name}
                                 habit_description = {habit.description}
+                            />
+                            <ProgressBar 
+                                percent = {(habit.count/habit.egg.hatching_number)*100}
+                                color = '#36a499'
                             />
                         </div>
                     }
