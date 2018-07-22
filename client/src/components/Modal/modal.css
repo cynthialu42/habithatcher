@@ -1,0 +1,16 @@
+
+.img-div{
+    width: 50%;
+    background: blue;
+}
+.info-div{
+    width: 50%;
+    background: green;
+}
+.modal-img{
+    width: 100%;
+    background: pink;
+}
+.modal-body-css{
+    width: 100%;
+}

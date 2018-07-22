@@ -17,47 +17,50 @@ const eggSeed = [
         egg_id: 0,
         name: "Cockatiel",
         hatching_number: 2,
-        start_img: "https://i.imgur.com/ESsYVDQ.png",
-        hatch_img: "https://i.imgur.com/r5gzC93.png",
-        end_img: "https://picsum.photos/200",
-        is_hatched: false
+        start_img: "https://i.imgur.com/8cLyQrO.png",
+        hatch_img: "https://i.imgur.com/ijUyJob.png",
+        end_img: "https://i.imgur.com/fHh9ibA.png",
+        is_hatched: false,
+        bird_description: "cockatiel bird description"
     },
     {
         egg_id: 1,
         name: "Budgie",
         hatching_number: 5,
-        start_img: "https://i.imgur.com/BumGBLp.png",
-        hatch_img: "https://i.imgur.com/ouvhy6Z.png",
-        end_img: "https://picsum.photos/200",
-        is_hatched: false
+        start_img: "https://i.imgur.com/8cLyQrO.png",
+        hatch_img: "https://i.imgur.com/vwFL5H7.png",
+        end_img: "https://i.imgur.com/nxGbBPD.png",
+        is_hatched: false,
+        bird_description: "Budgie bird description"
     }, 
     {
         egg_id: 2,
         name: "Conure",
         hatching_number: 1,
-        start_img: "https://i.imgur.com/crQTJnF.png",
-        hatch_img: "https://i.imgur.com/ueXkvXd.png",
-        end_img: "https://picsum.photos/200",
-        is_hatched: false
+        start_img: "https://i.imgur.com/8cLyQrO.png",
+        hatch_img: "https://i.imgur.com/t5ehafX.png",
+        end_img: "https://i.imgur.com/505Iq2a.png",
+        is_hatched: false,
+        bird_description: "Conure bird description"
     }, 
-    {
-        egg_id: 3,
-        name: "Cockatoo",
-        hatching_number: 1,
-        start_img: "https://i.imgur.com/Jcv1RkT.png",
-        hatch_img: "https://i.imgur.com/NDPI19g.png",
-        end_img: "https://picsum.photos/200",
-        is_hatched: false
-    }, 
-    {
-        egg_id: 4,
-        name: "Canary",
-        hatching_number: 1,
-        start_img: "https://i.imgur.com/rNGi2Zo.png",
-        hatch_img: "https://i.imgur.com/Inzn23t.png",
-        end_img: "https://picsum.photos/200",
-        is_hatched: false
-    }
+    // {
+    //     egg_id: 3,
+    //     name: "Cockatoo",
+    //     hatching_number: 1,
+    //     start_img: "https://i.imgur.com/Jcv1RkT.png",
+    //     hatch_img: "https://i.imgur.com/NDPI19g.png",
+    //     end_img: "https://picsum.photos/200",
+    //     is_hatched: false
+    // }, 
+    // {
+    //     egg_id: 4,
+    //     name: "Canary",
+    //     hatching_number: 1,
+    //     start_img: "https://i.imgur.com/rNGi2Zo.png",
+    //     hatch_img: "https://i.imgur.com/Inzn23t.png",
+    //     end_img: "https://picsum.photos/200",
+    //     is_hatched: false
+    // }
 ];
 
 db.Egg

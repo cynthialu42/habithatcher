@@ -8,7 +8,7 @@ const eggSchema = new Schema({
     start_img: { type: String },
     end_img: { type: String },
     is_hatched: { type: Boolean, default: false },
-    description: { type: String }
+    bird_description: { type: String }
 });
 
 const Egg = mongoose.model("Egg", eggSchema);
