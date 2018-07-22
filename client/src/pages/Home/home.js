@@ -4,6 +4,8 @@ import Test from './../../components/test';
 import moment from 'moment';
 import Instructions from './../../components/Instructions/index';
 import './home.css';
+import HabitModal from './../../components/HabitModal';
+
 class Home extends Component {
     state ={
         habits: []
@@ -66,8 +68,10 @@ class Home extends Component {
                     (
                         <div className = 'row'>
                         {this.state.habits.map(habit => (
+
                             <div className = 'col-lg-4 col-md-6 mt-5'>
                                 <div className = 'card text-light no-border'>
+
                                     {habit.count < habit.egg.hatching_number ? 
                                         <img className = 'card-img bird-img' src = {habit.egg.start_img}/>
                                         :
@@ -75,24 +79,38 @@ class Home extends Component {
                                         
                                     }
                                     <div className = 'card-img-overlay test text-center'>
-                                        <div className = 'card-title text-center habit-name'>{habit.name}</div>
+                                        <div className = 'card-title text-center habit-name'>
+                                            {habit.name}
+                                        </div>
                                         {/* <div className = 'text-center habit-description'>{habit.description}</div> */}
                                         <div className = 'text-center counter-center'>
                                             <div className = 'text-center habit-counter'>{habit.count}/{habit.iteration}</div>
                                         </div>
                                         <div className = 'text-center btn-section'>
                                             {habit.count === habit.iteration ? 
-                                                <button className = 'btn add-btn' disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
+                                                <button className = 'btn add-btn btn-lg' disabled = 'true' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}>Complete!</button>
                                                 :
-                                                <button className = 'btn add-btn' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}><i class="fas fa-plus "></i></button>
-                                            }
-                                        </div>
-                                        <a className = 'delete-btn' onClick={() => this.handleDelete(habit._id)}><i class="delete-btn fas fa-times fa-lg"></i></a>
+                                                <button className = 'btn add-btn' onClick = {() => this.updateCount(habit._id, habit.count, habit.iteration, habit.egg.hatching_number)}><i class="fas fa-plus fa-2x"></i></button>
+                                            }                                         
 
+                                        </div>
+                                        {/* <a className = 'delete-btn' onClick={() => this.handleDelete(habit._id)}><i class="delete-btn fas fa-times fa-lg"></i></a> */}
+                                        <div className = 'text-center btn-section' data-toggle="modal" data-target={"#" + habit._id}><i class="info-btn far fa-question-circle fa-lg"></i></div>
+                                        <HabitModal
+                                            habit_id = {habit._id}
+                                            habit_name = {habit.name}
+                                            habit_description = {habit.description}
+                                            date = {habit.date}
+                                            handleDelete = {this.handleDelete}
+                                            iteration = {habit.iteration}
+                                        />
                                         {/* <div className = 'text-muted bottom-text text-center'>Created {moment(habit.date).fromNow('dd')} ago</div> */}
+
                                     </div>
                                 </div>
+                                
                             </div>
+                            
                         ))}
                         </div>
                     )

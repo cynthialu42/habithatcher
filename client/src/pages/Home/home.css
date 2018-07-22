@@ -28,10 +28,21 @@
 .delete-btn{
     position: absolute;
     margin: auto;
-    left: 5%;
+    left: 10%;
     top: 5%;
     color: #ED6894;
 }
+/* .info-btn{
+    position: absolute;
+    margin: auto;
+    left: 5%;
+    top: 5%;
+    color: black;
+    padding: 1em;
+}
+.info-btn:hover{
+    transform: scale(1.2);
+} */
 .delete-btn:hover{
     color: rgb(180, 80, 113);
 }
@@ -42,12 +53,12 @@
     /* background: #212121; */
     background: none;
     border: none;
-    transition: transform .25s;
+    /* transition: transform .25s; */
 }
-.no-border:hover{
+/* .no-border:hover{
     transform: scale(1.05);
    
-}
+} */
 .add-btn:hover{
     background: #20736A;
 }
@@ -55,9 +66,19 @@
     position: absolute;
     bottom: 15%;
     margin: auto;
-    background: #1EBEA5;
+    background: #3DCAB7;
     color: white;
 
+}
+.info-btn{
+    position: absolute;
+    top: 10%;
+    margin: auto;
+    color: white;
+
+}
+.info-btn:hover{
+    color: #20736A;
 }
 .btn-section{
     display: flex;
