@@ -1,4 +1,4 @@
 module.exports = {
-    Habit: require('./habit'),
-    Egg: require('./eggs')
+  Egg: require('./eggs'),
+  Habit: require('./habit')
 };
