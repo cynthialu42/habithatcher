@@ -1,3 +1,17 @@
 .modal-color{
     color: black;
 }
+
+.box-styling{
+    border: none;
+    border-radius: 0px;
+}
+
+.modal-delete{
+    background: #ec407a;
+}
+.modal-delete:hover{
+    background: #a52c55;
+    border-color: #a52c55;
+
+}

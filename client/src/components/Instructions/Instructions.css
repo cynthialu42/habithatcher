@@ -6,3 +6,12 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.instruction-btn:hover{
+    background: #20736A;
+}
+.instruction-btn{
+    background: #1EBEA5;
+    color: white;
+
+}

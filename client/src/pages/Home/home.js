@@ -69,7 +69,7 @@ class Home extends Component {
                         <div className = 'row'>
                         {this.state.habits.map(habit => (
 
-                            <div className = 'col-lg-4 col-md-6 mt-5'>
+                            <div className = 'col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-5'>
                                 <div className = 'card text-light no-border'>
 
                                     {habit.count < habit.egg.hatching_number ? 

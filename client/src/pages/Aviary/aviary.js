@@ -48,7 +48,7 @@ class Aviary extends Component {
                 </div> */}
                 <div className = 'row mt-5'>
                 {this.state.habits.map((habit) => (
-                    <div className = 'col-md-3 mb-5'>
+                    <div className = 'col-lg-3 col-md-4 col-sm-6 mb-5'>
                     {habit.egg.is_hatched === true ?
                     (
                         <div>

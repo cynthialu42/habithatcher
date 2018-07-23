@@ -74,10 +74,12 @@ class Add extends Component {
                                 value = {this.state.name}
                                 onChange = {this.handleInputChange}
                                 name = "name"
-                                placeholder = "What would you like to turn into a habit?"
+                                placeholder = "ex. Code for an hour"
                                 id = 'habitName'
                                 className = 'form-control'
                             />
+                            <small id="habitName" class="form-text text-muted">What would you like turn into a habit?</small>
+
                         </div>
                         <div className = 'form-group'>
                             <label htmlFor='habitIteration'>Number of Times/Day:</label>
@@ -85,9 +87,11 @@ class Add extends Component {
                                 value = {this.state.iteration}
                                 onChange = {this.handleInputChange}
                                 name = "iteration"
-                                id = 'habitDescription'
+                                id = 'habitIteration'
                                 className = 'form-control'
                             />
+                            <small id="habitIteration" class="form-text text-muted">How many times a day should you do this?</small>
+
                         </div>
                         <div className = 'form-group'>
                             <label htmlFor='habitDescription'>Notes:</label>
@@ -100,6 +104,8 @@ class Add extends Component {
                                 maxLength="60"
                             >
                             </textarea>
+                            <small id="habitDescription" class="form-text text-muted">Character limit 60</small>
+
                         </div>
                         <div className = 'form-group mt-3'>
                             <input

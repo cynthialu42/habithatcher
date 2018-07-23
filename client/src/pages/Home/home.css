@@ -64,10 +64,11 @@
 }
 .add-btn{
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     margin: auto;
     background: #3DCAB7;
     color: white;
+    border: 2px solid #1a746bbb;
 
 }
 .info-btn{
@@ -107,6 +108,8 @@
     margin-top: 2.5em;
     padding: 0 2em;
     font-weight: bold;
+    text-shadow: 2px 2px #1a746bbb;
+    
 }
 
 .habit-description{
@@ -120,9 +123,11 @@
 .habit-counter{
     font-size: 3rem;
     margin: auto;
-    bottom: 40%;
+    bottom: 37%;
     position: absolute;
     color: white;
+    text-shadow: 3px 3px #1a746bbb;
+    font-weight: bold;
     /* text-shadow: .8px .8px rgba(255, 255, 255, 0.699); */
 }
 /* .test{
@@ -147,5 +152,23 @@
     }
     100%{
         transform: rotate(-10deg);
+    }
+} */
+/* 
+@media screen and (max-width: 768px) {
+    .habit-name{
+        font-size: 2em;
+    }
+    .habit-counter{
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .habit-name{
+        font-size: 1.5em;
+    }
+    .habit-counter{
+        font-size: 1.5em;
     }
 } */

@@ -7,7 +7,7 @@ const Modal = props =>{
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{props.habit_name}</h5>
+                        <h3 class="modal-title" id="exampleModalLabel">{props.habit_name}</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -17,13 +17,15 @@ const Modal = props =>{
                             <img className = {`modal-img ${props.wiggle}`}  src = {props.image} />
                             <p>{props.bird_name}</p>
                         </div>
-                        <div className = 'info-div align-items-center'>
-                            <p>Goal: {props.habit_description}</p>
+                        <div className = 'info-div text-left'>
+                            <h4>Goal: </h4>
+                            <p>{props.habit_description}</p>
                             <hr/>
                             {props.bird_description ?
-                                <p>{props.bird_name}: '{props.bird_description}'</p>
+                                (<div><h4>{props.bird_name} wisdom: </h4><p>"<em>{props.bird_description}"</em></p></div>)
+                                
                                 :
-                                <p>Egg has not hatched yet!</p>
+                                <h4>Egg has not hatched yet!</h4>
                             }
                             
                         </div>
