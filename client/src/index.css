@@ -5,7 +5,7 @@ body {
     font-family: 'Quicksand', sans-serif;
 
     /* background: #303030; */
-    background: white;
+    background: #fcfefe;
 }
 
 a{
@@ -16,3 +16,36 @@ a{
     background: #2FA599;
 } */
 
+@media screen and (min-width: 576px){
+    .habit-name{
+        font-size: 1.5em;
+    }
+    .habit-counter{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 768px) {
+    .habit-name{
+        font-size: 1.5em;
+    }
+    .habit-counter{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .habit-name{
+        font-size: 1.5em;
+    }
+    .habit-counter{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 1200px){
+    .habit-name{
+        font-size: 2em;
+    }
+    .habit-counter{
+        font-size: 3em;
+    }
+}

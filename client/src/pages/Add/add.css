@@ -15,3 +15,62 @@
 .button-color{
     background: #1EBEA5;
 }
+.add-page-img{
+    width: 100%;
+}
+.shake{
+    transform-origin: bottom center;
+    animation: shake 2s ;
+    -webkit-animation: shake 2s ;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes shake{
+    0%{
+        transform: rotate(0deg);
+    }
+    10%{
+        transform: rotate(3deg);
+    }
+    20%{
+        transform: rotate(-3deg);
+    }
+    30%{
+        transform: rotate(3deg);
+    }
+    40%{
+        transform: rotate(-3deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@-webkit-keyframes shake{
+    0%{
+        -webkit-transform: rotate(0deg);
+    }
+    10%{
+        -webkit-transform: rotate(3deg);
+    }
+    20%{
+        -webkit-transform: rotate(-3deg);
+    }
+    30%{
+        -webkit-transform: rotate(3deg);
+    }
+    40%{
+        -webkit-transform: rotate(-3deg);
+    }
+    50%{
+        -webkit-transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+

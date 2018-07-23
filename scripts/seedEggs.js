@@ -15,43 +15,44 @@
     const eggSeed = [
         {
             egg_id: 0,
-            name: "Cockatiel",
-            hatching_number: 2,
+            name: "Party Parrot",
+            hatching_number: 5,
             start_img: "https://i.imgur.com/8cLyQrO.png",
             hatch_img: "https://i.imgur.com/ijUyJob.png",
-            end_img: "https://i.imgur.com/fHh9ibA.png",
+            end_img: "https://i.imgur.com/nBGWyam.png",
             is_hatched: false,
-            bird_description: "cockatiel bird description"
+            bird_description: "Hi I like to scream"
         },
         {
             egg_id: 1,
-            name: "Budgie",
-            hatching_number: 5,
+            name: "Dad-Joke Duck",
+            hatching_number: 3,
             start_img: "https://i.imgur.com/8cLyQrO.png",
             hatch_img: "https://i.imgur.com/vwFL5H7.png",
-            end_img: "https://i.imgur.com/nxGbBPD.png",
+            end_img: "https://i.imgur.com/RrVVNgz.png",
             is_hatched: false,
-            bird_description: "Budgie bird description"
+            bird_description: "If I threw bread back at you, would you DUCK?"
         }, 
         {
             egg_id: 2,
-            name: "Conure",
-            hatching_number: 1,
+            name: "Cool Cockatiel",
+            hatching_number: 6,
             start_img: "https://i.imgur.com/8cLyQrO.png",
             hatch_img: "https://i.imgur.com/t5ehafX.png",
-            end_img: "https://i.imgur.com/505Iq2a.png",
+            end_img: "https://i.imgur.com/aIbvz5k.png",
             is_hatched: false,
-            bird_description: "Conure bird description"
+            bird_description: "Tiel with it"
         }, 
-        // {
-        //     egg_id: 3,
-        //     name: "Cockatoo",
-        //     hatching_number: 1,
-        //     start_img: "https://i.imgur.com/Jcv1RkT.png",
-        //     hatch_img: "https://i.imgur.com/NDPI19g.png",
-        //     end_img: "https://picsum.photos/200",
-        //     is_hatched: false
-        // }, 
+        {
+            egg_id: 3,
+            name: "Fast Finch",
+            hatching_number: 2,
+            start_img: "https://i.imgur.com/8cLyQrO.png",
+            hatch_img: "https://i.imgur.com/vwFL5H7.png",
+            end_img: "https://i.imgur.com/X9NRI2a.png",
+            is_hatched: false,
+            bird_description: "The artist didn't even try with me"
+        }
         // {
         //     egg_id: 4,
         //     name: "Canary",

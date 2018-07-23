@@ -16,7 +16,7 @@ const HabitModal = props =>{
                     </div>
                     <div class="modal-body">
                         <div className = 'text-left'>
-                            <p className = 'text-muted text-right'><em>Created {moment(props.date).fromNow('dd')} ago</em></p>
+                            <p className = 'text-muted'><em>Created {moment(props.date).fromNow('dd')} ago</em></p>
 
 
                             <h4>Notes:</h4>

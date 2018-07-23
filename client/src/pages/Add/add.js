@@ -20,7 +20,7 @@ class Add extends Component {
         //where id is randomly generated
         // put this in componentDidMount so that
         //an egg is generated and stored in state as soon as we load the add page
-        let randomEgg = Math.floor(Math.random() * 3);
+        let randomEgg = Math.floor(Math.random() * 4);
         console.log(randomEgg);
         API.getEgg(randomEgg)
             .then(res =>
@@ -63,7 +63,7 @@ class Add extends Component {
                 </div>
                 <div className = 'row mt-5'>
                     <div className = 'col-lg-6'>
-                        <p>lskfjlsdkjfdsljfsdklsdjfsd</p>
+                        <img className = 'add-page-img' src = './Eggbunch.png'/>
                     </div>
                 
                 <div className = 'col-lg-6 habit-form'>
@@ -74,7 +74,6 @@ class Add extends Component {
                                 value = {this.state.name}
                                 onChange = {this.handleInputChange}
                                 name = "name"
-                                placeholder = "ex. Code for an hour"
                                 id = 'habitName'
                                 className = 'form-control'
                             />
