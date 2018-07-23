@@ -132,3 +132,20 @@
 
     ;
 } */
+
+/* .wiggle{
+    transform-origin: bottom center;
+    animation: jiggle 1s infinte;
+    transform: rotate(45deg); 
+}
+@keyframes jiggle{
+    0%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+} */

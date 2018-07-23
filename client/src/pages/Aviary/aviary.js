@@ -61,6 +61,7 @@ class Aviary extends Component {
                                 habit_name = {habit.name}
                                 habit_description = {habit.description}
                                 bird_description = {habit.egg.bird_description}
+                                wiggle = 'bounce'
                             />
 
                         </div>
@@ -75,6 +76,7 @@ class Aviary extends Component {
                                 habit_id = {habit._id}
                                 habit_name = {habit.name}
                                 habit_description = {habit.description}
+                                wiggle = 'wiggle'
                             />
                             <ProgressBar 
                                 percent = {(habit.count/habit.egg.hatching_number)*100}

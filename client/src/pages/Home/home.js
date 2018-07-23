@@ -73,9 +73,9 @@ class Home extends Component {
                                 <div className = 'card text-light no-border'>
 
                                     {habit.count < habit.egg.hatching_number ? 
-                                        <img className = 'card-img bird-img' src = {habit.egg.start_img}/>
+                                        <img className = 'card-img bird-img ' src = {habit.egg.start_img}/>
                                         :
-                                        <img className = 'card-img bird-img' src = {habit.egg.hatch_img}/>
+                                        <img className = 'card-img bird-img ' src = {habit.egg.hatch_img}/>
                                         
                                     }
                                     <div className = 'card-img-overlay test text-center'>

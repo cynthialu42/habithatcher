@@ -14,7 +14,7 @@ const Modal = props =>{
                     </div>
                     <div class="modal-body d-flex justify-content-around modal-body-css">
                         <div className = 'img-div'>
-                            <img className = 'modal-img' src = {props.image} />
+                            <img className = {`modal-img ${props.wiggle}`}  src = {props.image} />
                             <p>{props.bird_name}</p>
                         </div>
                         <div className = 'info-div align-items-center'>
