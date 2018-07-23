@@ -17,6 +17,7 @@ if(process.env.NODE_ENV === 'production'){
 // Let Express use routes
 app.use(routes);
 
+mongoose.Promise = global.Promise;
 
 // Connect to database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/habithatcher");
