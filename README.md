@@ -11,6 +11,9 @@ Habit Hatcher aims to draw upon these concepts to make completing your goals and
 # Demo
 Visit the demo here: http://sheltered-lake-61651.herokuapp.com/
 
+# Mobile Version
+Visit the github repo here: https://github.com/cynthialu42/habithatchermobile
+
 # How it works
 - Users are presented a simple form to add their goals, how often they should complete the goal daily, and any additional notes.
 - Upon submission, users are taken to the home page, where each habit has been assigned a random egg that will hatch randomly as the user increments and complete the goal. Once the daily goal is complete, the buttons to increment will grey out.
